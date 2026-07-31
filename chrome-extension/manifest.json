@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Real-Time Phishing Website Prevention",
+  "version": "0.1.0",
+  "description": "Detects phishing URLs in real time using a FastAPI deep learning backend.",
+  "permissions": ["tabs", "storage", "scripting"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*", "<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Phishing Guard"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["warning.html", "styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+

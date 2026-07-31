@@ -1,0 +1,178 @@
+/* Shared styles for the Chrome Extension popup and warning page. */
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #172033;
+  background: #f3f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.popup-body {
+  width: 360px;
+  min-height: 420px;
+  background: #f3f6fb;
+}
+
+.popup {
+  padding: 18px;
+}
+
+.popup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #1769e0;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.result-panel,
+.warning-card {
+  background: #ffffff;
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(18, 31, 51, 0.12);
+}
+
+.result-panel {
+  padding: 16px;
+}
+
+.label {
+  margin: 0 0 6px;
+  color: #66748a;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.url-text {
+  margin: 0 0 14px;
+  color: #172033;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.message {
+  min-height: 42px;
+  margin: 12px 0;
+  color: #4f5f73;
+  line-height: 1.4;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.badge-low {
+  color: #0f6d42;
+  background: #dff7ea;
+}
+
+.badge-medium {
+  color: #8a5a00;
+  background: #fff1c7;
+}
+
+.badge-high {
+  color: #a82020;
+  background: #ffe0df;
+}
+
+.badge-unknown {
+  color: #4f5f73;
+  background: #e8edf4;
+}
+
+.button {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  border-radius: 8px;
+  background: #1769e0;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.button:disabled {
+  background: #8eaee0;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  color: #172033;
+  background: #e7edf6;
+}
+
+.warning-body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+  background: #fff0ef;
+}
+
+.warning-card {
+  width: min(720px, 100%);
+  padding: 28px;
+  border-left: 8px solid #d33a35;
+}
+
+.warning-card h1 {
+  font-size: 2rem;
+}
+
+.warning-copy {
+  color: #4f5f73;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.warning-details {
+  margin: 18px 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.warning-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .warning-actions {
+    grid-template-columns: 1fr;
+  }
+}

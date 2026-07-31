@@ -1,0 +1,35 @@
+# FastAPI backend
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+
+# Machine learning and deep learning
+tensorflow
+keras
+numpy
+pandas
+scikit-learn
+joblib
+
+# Explainable AI and visualization
+shap
+matplotlib
+
+# MongoDB integration
+pymongo
+motor
+
+# URL analysis and HTTP utilities
+tldextract
+requests
+validators
+beautifulsoup4
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+python-multipart
+keras-tuner

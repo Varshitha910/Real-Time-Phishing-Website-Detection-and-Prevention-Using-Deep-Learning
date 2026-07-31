@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Warning</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="warning-body">
+    <main class="warning-card">
+      <p class="eyebrow">Blocked by Phishing Guard</p>
+      <h1>Potential Phishing Website</h1>
+      <p class="warning-copy">
+        This page was classified as high risk by the phishing detection model.
+      </p>
+
+      <section class="warning-details">
+        <p class="label">Blocked URL</p>
+        <p id="blockedUrl" class="url-text">Unknown</p>
+        <p class="label">Risk Level</p>
+        <strong id="riskLevel">High</strong>
+      </section>
+
+      <div class="warning-actions">
+        <button id="backButton" class="button" type="button">Go Back</button>
+        <button id="continueButton" class="button button-secondary" type="button">Continue Anyway</button>
+      </div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const blockedUrl = params.get("blockedUrl") || "";
+      const risk = params.get("risk") || "High";
+
+      document.getElementById("blockedUrl").textContent = blockedUrl || "Unknown";
+      document.getElementById("riskLevel").textContent = risk;
+
+      document.getElementById("backButton").addEventListener("click", () => {
+        history.length > 1 ? history.back() : window.close();
+      });
+
+      document.getElementById("continueButton").addEventListener("click", () => {
+        if (blockedUrl) {
+          window.location.href = blockedUrl;
+        }
+      });
+    </script>
+  </body>
+</html>
+

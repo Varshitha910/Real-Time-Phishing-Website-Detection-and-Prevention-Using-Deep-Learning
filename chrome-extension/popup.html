@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing Guard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-body">
+    <main class="popup">
+      <header class="popup-header">
+        <div>
+          <p class="eyebrow">Protection Status</p>
+          <h1>Phishing Guard</h1>
+        </div>
+        <span id="riskBadge" class="badge badge-unknown">Unknown</span>
+      </header>
+
+      <section class="result-panel">
+        <p class="label">Current URL</p>
+        <p id="currentUrl" class="url-text">Loading...</p>
+
+        <div class="result-grid">
+          <div>
+            <p class="label">Prediction</p>
+            <strong id="prediction">Checking</strong>
+          </div>
+          <div>
+            <p class="label">Confidence</p>
+            <strong id="confidence">0%</strong>
+          </div>
+        </div>
+
+        <p id="message" class="message">Scanning the current tab.</p>
+        <button id="scanButton" class="button" type="button">Scan Again</button>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
+

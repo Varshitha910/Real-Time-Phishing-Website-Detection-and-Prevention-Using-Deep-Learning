@@ -1,0 +1,21 @@
+[
+  "url_length",
+  "dot_count",
+  "hyphen_count",
+  "special_char_count",
+  "has_at_symbol",
+  "suspicious_keyword_count",
+  "url_entropy",
+  "domain_length",
+  "subdomain_count",
+  "has_ip_address",
+  "redirect_count",
+  "http_status_code",
+  "response_time_ms",
+  "has_valid_ssl",
+  "form_count",
+  "iframe_count",
+  "script_count",
+  "has_password_input"
+]
+
