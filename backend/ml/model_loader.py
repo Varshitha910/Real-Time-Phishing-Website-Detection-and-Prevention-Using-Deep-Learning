@@ -17,9 +17,13 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 BACKEND_ML_DIR = PROJECT_ROOT / "backend" / "ml"
 ROOT_ARTIFACTS_DIR = PROJECT_ROOT / "ml" / "artifacts"
 
+# MODEL_CANDIDATES = [
+#     BACKEND_ML_DIR / "model.h5",
+#     ROOT_ARTIFACTS_DIR / "phishing_model.keras",
+# ]
 MODEL_CANDIDATES = [
+    ROOT_ARTIFACTS_DIR / "phishing_model.h5",
     BACKEND_ML_DIR / "model.h5",
-    ROOT_ARTIFACTS_DIR / "phishing_model.keras",
 ]
 
 SCALER_CANDIDATES = [
@@ -34,7 +38,8 @@ class MLPhishingModel:
     def __init__(self) -> None:
         self.model_path = _first_existing(MODEL_CANDIDATES, "model")
         self.scaler_path = _first_existing(SCALER_CANDIDATES, "scaler")
-        self.model = tf.keras.models.load_model(self.model_path)
+        # self.model = tf.keras.models.load_model(self.model_path)
+        self.model = tf.keras.models.load_model(self.model_path, compile=False)
         self.scaler = joblib.load(self.scaler_path)
 
     def predict(self, url: str) -> dict[str, object]:
